@@ -6,56 +6,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تصفية بيانات المزادات</title>
   <style>
+    /* التنسيقات الجديدة */
+    header {
+      background: #4CAF50;
+      padding: 15px;
+      color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
       background-color: #f0f0f0;
+      padding-top: 100px; /* مساحة للهيدر */
+      padding-bottom: 120px; /* مساحة للفوتر */
+      margin: 0;
     }
 
     .search-container {
-      margin-bottom: 20px;
+      margin: 20px auto;
+      max-width: 1200px;
+      padding: 0 15px;
     }
 
-    #searchAuction,
-    #searchCity {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-      margin-bottom: 10px;
+    #resultsTable {
+      display: none; /* إخفاء الجدول بشكل مبدئي */
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* التعديلات للجوال */
+    @media (max-width: 768px) {
+      table {
+        font-size: 12px;
+      }
+      
+      th, td {
+        padding: 8px;
+      }
+      
+      .nav-links {
+        display: none; /* إخفاء الروابط في الجوال */
+      }
     }
 
-    th,
-    td {
-      padding: 12px;
-      text-align: right;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #4CAF50;
+    /* الفوتر */
+    footer {
+      background: #4CAF50;
       color: white;
-    }
-
-    tr:hover {
-      background-color: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 
 <body>
+  <!-- الهيدر -->
+  <header>
+    <nav>
+      <img src="logo.png" alt="شعار الشركة" class="logo">
+      <div class="nav-links">
+        <a href="#">الرئيسية</a>
+        <a href="#">حول</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- محتوى الصفحة -->
   <div class="search-container">
     <input type="text" id="searchAuction" placeholder="ابحث باسم المزاد...">
     <input type="text" id="searchCity" placeholder="ابحث بالمدينة...">
   </div>
+
   <table id="resultsTable">
     <thead>
       <tr>
@@ -70,13 +114,22 @@
         <th>تركون العقبة</th>
       </tr>
     </thead>
-    <tbody id="tableBody">
-    </tbody>
+    <tbody id="tableBody"></tbody>
   </table>
 
+  <!-- الفوتر -->
+  <footer>
+    <div class="footer-content">
+      <p>شركة الصافي للمزاد الأمريكي والكندي</p>
+      <p>البصرة - شارع الوفود - معرض الصافي للسيارات</p>
+      <p>الفرع الثاني: الجزائر - شارع كيا سابقًا - مقابل أرض القهوة</p>
+      <p>التصميم والبرمجة - م. أحمد صباح والحاسوب</p>
+    </div>
+  </footer>
+
   <script>
-    // بيانات JSON الأصلية (مثال)
-    const data = [{
+    const data = [
+    {
         "AUCTION": "FL   BOGGY CREEK    IAA",
         "CITY": "ORLANDO",
         "MAERSK  AQABA": 1900,
@@ -4398,53 +4451,57 @@
         "ONE  JEBEL ALI": 2025,
         "TERMINAL": "CA                         ",
         "TURKON  AQABA": 2900
-      }
-      // ... (بقية البيانات هنا)
-    ];
-    // تحميل البيانات في الجدول مع زيادة 400
+      }/* ... البيانات الأصلية هنا ... */];
+
+    // تحميل البيانات مع إظهار الجدول بعد التحميل
     function loadData() {
       const tbody = document.getElementById('tableBody');
       tbody.innerHTML = '';
+      
       data.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-                    <td>${item.AUCTION}</td>
-                    <td>${item.CITY}</td>
-                    <td>${Number(item["MAERSK  AQABA"]) + 400}</td>
-                    <td>${Number(item["MAERSK  JEBEL ALI"]) + 400}</td>
-                    <td>${Number(item["MAERSK  UMM QASR"]) + 400}</td>
-                    <td>${Number(item["MSC  UMM QASR"]) + 400}</td>
-                    <td>${Number(item["ONE  JEBEL ALI"]) + 400}</td>
-                    <td>${item.TERMINAL}</td>
-                    <td>${Number(item["TURKON  AQABA"]) + 400}</td>
-                `;
+          <td>${item.AUCTION}</td>
+          <td>${item.CITY}</td>
+          <td>${Number(item["MAERSK  AQABA"]) + 400}</td>
+          <td>${Number(item["MAERSK  JEBEL ALI"]) + 400}</td>
+          <td>${Number(item["MAERSK  UMM QASR"]) + 400}</td>
+          <td>${Number(item["MSC  UMM QASR"]) + 400}</td>
+          <td>${Number(item["ONE  JEBEL ALI"]) + 400}</td>
+          <td>${item.TERMINAL}</td>
+          <td>${Number(item["TURKON  AQABA"]) + 400}</td>
+        `;
         tbody.appendChild(row);
       });
+      
+      // إظهار الجدول بعد التحميل
+      document.getElementById('resultsTable').style.display = 'table';
     }
-    // تصفية النتائج
-    const searchAuction = document.getElementById('searchAuction');
-    const searchCity = document.getElementById('searchCity');
 
+    // تصفية النتائج (معدلة لدعم التمرير في الجوال)
     function filterResults() {
       const auctionText = searchAuction.value.toUpperCase();
       const cityText = searchCity.value.toUpperCase();
       const rows = document.querySelectorAll("#tableBody tr");
+      
       rows.forEach(row => {
         const auction = row.cells[0].textContent.toUpperCase();
         const city = row.cells[1].textContent.toUpperCase();
-        const showRow = auction.includes(auctionText) && city.includes(cityText);
-        row.style.display = showRow ? "" : "none";
+        row.style.display = (auction.includes(auctionText) && city.includes(cityText)) ? "" : "none";
       });
     }
+
     // أحداث البحث
-    searchAuction.addEventListener('keyup', filterResults);
-    searchCity.addEventListener('keyup', filterResults);
-    // تحميل البيانات عند فتح الصفحة
-    window.onload = () => {
+    const searchAuction = document.getElementById('searchAuction');
+    const searchCity = document.getElementById('searchCity');
+    searchAuction.addEventListener('input', filterResults);
+    searchCity.addEventListener('input', filterResults);
+
+    // تحميل أولي
+    window.addEventListener('load', () => {
       loadData();
       filterResults();
-    };
+    });
   </script>
 </body>
-
 </html>
