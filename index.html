@@ -86,19 +86,19 @@
 <body>
   <!-- الهيدر -->
   <header>
-    <nav>
-      <img src="logo.png" alt="شعار الشركة" class="logo">
+    <nav  class="nav nav-bordered">
+      <img src="logo.png" alt="شعار الشركة" class="rounded-circle img-fluid">
       <div class="nav-links">
-        <a href="#">الرئيسية</a>
-        <a href="#">حول</a>
+        <a class="nav-link active" href="#">الرئيسية</a>
+        <a  class="nav-link" href="#">حول</a>
       </div>
     </nav>
   </header>
 
   <!-- محتوى الصفحة -->
   <div class="search-container">
-    <input type="text" id="searchAuction" placeholder="ابحث باسم المزاد...">
-    <input type="text" id="searchCity" placeholder="ابحث بالمدينة...">
+    <input type="text" class="form-control" id="searchAuction" placeholder="ابحث باسم المزاد...">
+    <input type="text" class="form-control" id="searchCity" placeholder="ابحث بالمدينة...">
   </div>
 
   <table class="table" id="resultsTable">
@@ -119,8 +119,8 @@
   </table>
 
   <!-- الفوتر -->
-  <footer>
-    <div class="footer-content">
+  <footer class="blockquote-footer">
+    <div class="card">
       <p>شركة الصافي للمزاد الأمريكي والكندي</p>
       <p>البصرة - شارع الوفود - معرض الصافي للسيارات</p>
       <p>الفرع الثاني: الجزائر - شارع كيا سابقًا - مقابل أرض القهوة</p>
