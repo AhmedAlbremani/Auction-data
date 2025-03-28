@@ -1,168 +1,86 @@
-
-/* التنسيقات العامة */
-/* تنسيقات الجدول للهواتف */
-@media (max-width: 767px) {
-  .table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 10px 0;
-    -webkit-overflow-scrolling: touch;
-  }
-  /* في ملف style.css */
-footer {
-  background: #000;
-  padding: 8px 10px !important; /* تقليل الحشو */
-  min-height: 40px; /* ارتفاع أدنى */
+/* تنسيقات عامة */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000; /* خلفية سوداء */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
 }
 
-.footer-content p {
-  margin: 1px 0 !important;
-  line-height: 1.1 !important;
-  font-size: 0.7em !important; /* حجم خط صغير جدًا */
-}
-
-.credit {
-  font-size: 0.6em !important;
-  margin-top: 3px !important;
-}
-
-@media (max-width: 767px) {
-  footer {
-    padding: 5px 8px !important;
-    min-height: 35px;
-  }
-  
-  .footer-content p {
-    font-size: 0.65em !important;
-    line-height: 1 !important;
-  }
-}
-.nav {
-  flex-direction: row-reverse; /* عكس ترتيب العناصر */
+/* تنسيق الصورة المركزية */
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
 .logo {
-  order: 2; /* نقل الشعار إلى الطرف الآخر */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #4CAF50;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  animation: glow 2s infinite alternate;
 }
 
-.nav-links {
-  order: 1; /* نقل الروابط إلى اليسار */
-  margin-left: 0;
-  margin-right: auto;
-}
-/* تنسيق الفوتر الجديد */
-footer {
-  line-height: 1.2; /* تقليل المسافة بين الأسطر */
-}
-
-.footer-content p {
-  margin: 2px 0; /* تقليل الهوامش العلوية والسفلية */
-  padding: 0;
-  font-size: 0.85em; /* تصغير حجم الخط قليلاً */
+/* تنسيق الجدول */
+.table-container {
+  max-width: 95%;
+  margin: 20px auto;
+  overflow-x: auto;
+  position: relative;
+  z-index: 999;
 }
 
-.credit {
-  margin-top: 4px !important; /* مسافة إضافية صفط للشعار */
-}
-  #resultsTable {
-    min-width: 600px; /* عرض أدنى للجدول */
-    margin: 0 auto;
-  }
-
-  .table th,
-  .table td {
-    font-size: 12px;
-    padding: 8px;
-    white-space: nowrap; /* منع تكسر النص */
-  }
-
-  .search-container {
-    width: 95%;
-    margin: 10px auto;
-  }
-
-  #searchAuction,
-  #searchCity {
-    width: 100%;
-    margin: 5px 0;
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-top: 60px;
-    padding-bottom: 80px;
-  }
-  
-  header {
-    padding: 10px;
-  }
-  
-  footer {
-    padding: 10px;
-  }
-}
-body {
-  padding-top: 70px; /* تقليل المساحة للهيدر */
-  padding-bottom: 100px; /* تقليل المساحة للفوتر */
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-}
-
-/* الجدول بتنسيق كامل الحدود */
 .table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.table th,
-.table td {
-  border: 1px solid #ddd !important;
-  padding: 12px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
 }
 
 .table th {
-  background-color: #4CAF50;
-  color: white;
+  background: #4CAF50 !important;
+  color: #fff !important;
   font-weight: bold;
+  border-bottom: 2px solid #388E3C !important;
 }
 
-/* الفوتر الثابت */
+.table td {
+  vertical-align: middle;
+  border-color: #ddd !important;
+}
+
+/* تنسيق الفوتر الثابت */
 footer {
   background: #000;
-  color: white;
-  padding: 20px;
-  text-align: center;
+  padding: 8px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  border-top: 1px solid #4CAF50;
 }
 
-.footer-content p {
-  margin: 5px 0;
-  font-size: 0.9em;
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.75em;
+  line-height: 1.2;
 }
 
-.credit {
-  color: #4CAF50;
-  font-weight: bold;
-}
-
-/* التنسيق للجوال */
+/* تنسيقات الجوال */
 @media (max-width: 768px) {
-  body {
-    padding-top: 80px;
-    padding-bottom: 120px;
-  }
-  
-  .table-container {
-    overflow-x: auto;
+  .logo {
+    width: 80px;
+    height: 80px;
   }
   
   .table {
@@ -173,23 +91,38 @@ footer {
   .table td {
     padding: 8px;
   }
-  
-  footer {
-    padding: 15px;
-  }
-  
-  .footer-content p {
-    font-size: 0.8em;
-  }
 }
 
 @media (max-width: 480px) {
-  .search-container {
-    padding: 0 10px;
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
   }
   
-  #searchAuction,
-  #searchCity {
-    font-size: 14px;
+  .footer-content {
+    font-size: 0.6em;
   }
+}
+
+/* تأثيرات الحركة */
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px #4CAF50);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #4CAF50);
+  }
+}
+
+/* تحسينات إضافية */
+input.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #4CAF50;
+  color: #fff;
+  margin: 10px 0;
+}
+
+input.form-control:focus {
+  box-shadow: 0 0 8px #4CAF50;
 }
