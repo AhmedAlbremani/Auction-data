@@ -1,70 +1,195 @@
-header {
-  background: #4CAF50;
-  padding: 15px;
-  color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* التنسيقات العامة */
+/* تنسيقات الجدول للهواتف */
+@media (max-width: 767px) {
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 10px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* في ملف style.css */
+footer {
+  background: #000;
+  padding: 8px 10px !important; /* تقليل الحشو */
+  min-height: 40px; /* ارتفاع أدنى */
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+.footer-content p {
+  margin: 1px 0 !important;
+  line-height: 1.1 !important;
+  font-size: 0.7em !important; /* حجم خط صغير جدًا */
+}
+
+.credit {
+  font-size: 0.6em !important;
+  margin-top: 3px !important;
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding: 5px 8px !important;
+    min-height: 35px;
+  }
+  
+  .footer-content p {
+    font-size: 0.65em !important;
+    line-height: 1 !important;
+  }
+}
+.nav {
+  flex-direction: row-reverse; /* عكس ترتيب العناصر */
 }
 
 .logo {
-  height: 40px;
+  order: 2; /* نقل الشعار إلى الطرف الآخر */
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
+.nav-links {
+  order: 1; /* نقل الروابط إلى اليسار */
+  margin-left: 0;
+  margin-right: auto;
+}
+/* تنسيق الفوتر الجديد */
+footer {
+  line-height: 1.2; /* تقليل المسافة بين الأسطر */
 }
 
+.footer-content p {
+  margin: 2px 0; /* تقليل الهوامش العلوية والسفلية */
+  padding: 0;
+  font-size: 0.85em; /* تصغير حجم الخط قليلاً */
+}
+
+.credit {
+  margin-top: 4px !important; /* مسافة إضافية صفط للشعار */
+}
+  #resultsTable {
+    min-width: 600px; /* عرض أدنى للجدول */
+    margin: 0 auto;
+  }
+
+  .table th,
+  .table td {
+    font-size: 12px;
+    padding: 8px;
+    white-space: nowrap; /* منع تكسر النص */
+  }
+
+  .search-container {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  #searchAuction,
+  #searchCity {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  
+  header {
+    padding: 10px;
+  }
+  
+  footer {
+    padding: 10px;
+  }
+}
 body {
+  padding-top: 70px; /* تقليل المساحة للهيدر */
+  padding-bottom: 100px; /* تقليل المساحة للفوتر */
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  padding-top: 100px;
-  padding-bottom: 120px;
   margin: 0;
 }
 
-.search-container {
-  margin: 20px auto;
-  max-width: 1200px;
-  padding: 0 15px;
+/* الجدول بتنسيق كامل الحدود */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-#resultsTable {
-  display: none;
+.table th,
+.table td {
+  border: 1px solid #ddd !important;
+  padding: 12px;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  table {
-    font-size: 12px;
-  }
-  
-  th, td {
-    padding: 8px;
-  }
-  
-  .nav-links {
-    display: none;
-  }
+.table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
 }
 
+/* الفوتر الثابت */
 footer {
-  background: #4CAF50;
+  background: #000;
   color: white;
   padding: 20px;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.credit {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* التنسيق للجوال */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .table {
+    font-size: 12px;
+  }
+  
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+  
+  footer {
+    padding: 15px;
+  }
+  
+  .footer-content p {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    padding: 0 10px;
+  }
+  
+  #searchAuction,
+  #searchCity {
+    font-size: 14px;
+  }
 }
