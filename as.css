@@ -1,3 +1,70 @@
-ghghgc
-cgh
-gh
+header {
+  background: #4CAF50;
+  padding: 15px;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  margin: 0;
+}
+
+.search-container {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+#resultsTable {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+}
+
+footer {
+  background: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
