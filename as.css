@@ -1,128 +1,107 @@
-/* تنسيقات عامة */
+/* جعل خلفية الصفحة سوداء */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #000; /* خلفية سوداء */
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  position: relative;
+  background-color: black;
+  color: white;
+  font-family: 'Amiri', serif; /* الخط الكوفي */
 }
 
-/* تنسيق الصورة المركزية */
-.logo-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* العنوان قبل النافبار */
+.page-header {
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Amiri', serif;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.page-header h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* جعل النافبار ثابت بخلفية سوداء وإطار أخضر */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
   z-index: 1000;
+  border-bottom: 3px solid green;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+}
+
+/* تنسيق اللوجو ليكون في المنتصف */
 .logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #4CAF50;
-  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
-  object-fit: cover;
+  max-height: 50px;
   display: block;
-  margin: 0 auto;
-  animation: glow 2s infinite alternate;
+  margin: auto;
 }
 
-/* تنسيق الجدول */
+/* تنسيق روابط النافبار بإطار أخضر */
+.nav-links {
+  display: flex;
+  gap: 10px;
+  border: 2px solid green;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+/* ضبط الجدول ليكون متجاوبًا */
 .table-container {
-  max-width: 95%;
-  margin: 20px auto;
   overflow-x: auto;
-  position: relative;
-  z-index: 999;
+  padding: 120px 10px 10px; /* إضافة مساحة تحت النافبار */
 }
 
 .table {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+  border: 2px solid white;
+  width: 100%;
 }
 
-.table th {
-  background: #4CAF50 !important;
-  color: #fff !important;
-  font-weight: bold;
-  border-bottom: 2px solid #388E3C !important;
+.table th, .table td {
+  border: 1px solid white;
+  text-align: center;
+  font-family: 'Amiri', serif; /* الخط الكوفي */
+  padding: 5px; /* تقليل التباعد بين الأسطر */
 }
 
-.table td {
-  vertical-align: middle;
-  border-color: #ddd !important;
-}
-
-/* تنسيق الفوتر الثابت */
+/* جعل الفوتر أصغر مع تقليل التباعد */
 footer {
-  background: #000;
-  padding: 8px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid #4CAF50;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  font-size: 0.75em;
-  line-height: 1.2;
+/* تغيير لون الخط في الفوتر */
+footer p {
+  color: red;
+  margin: 3px 0; /* تقليل التباعد بين الأسطر */
 }
 
-/* تنسيقات الجوال */
-@media (max-width: 768px) {
-  .logo {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .table {
-    font-size: 12px;
-  }
-  
-  .table th,
-  .table td {
-    padding: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    width: 60px;
-    height: 60px;
-    border-width: 2px;
-  }
-  
-  .footer-content {
-    font-size: 0.6em;
-  }
-}
-
-/* تأثيرات الحركة */
-@keyframes glow {
-  from {
-    filter: drop-shadow(0 0 5px #4CAF50);
-  }
-  to {
-    filter: drop-shadow(0 0 15px #4CAF50);
-  }
-}
-
-/* تحسينات إضافية */
-input.form-control {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #4CAF50;
-  color: #fff;
-  margin: 10px 0;
-}
-
-input.form-control:focus {
-  box-shadow: 0 0 8px #4CAF50;
+footer .credit {
+  color: green;
 }
