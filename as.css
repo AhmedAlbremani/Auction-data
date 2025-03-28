@@ -1,15 +1,17 @@
 /* جعل خلفية الصفحة سوداء */
+/* جعل خلفية الصفحة سوداء */
 body {
   background-color: black;
   color: white;
-  font-family: 'Amiri', serif; /* الخط الكوفي */
+  font-family: 'Amiri', serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* العنوان قبل النافبار */
 .page-header {
   text-align: center;
-  padding: 10px 0;
-  font-family: 'Amiri', serif;
+  padding: 20px 0;
 }
 
 .page-header h1 {
@@ -22,7 +24,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* جعل النافبار ثابت بخلفية سوداء وإطار أخضر */
+/* النافبار */
 .navbar {
   position: fixed;
   top: 0;
@@ -43,14 +45,13 @@ body {
   width: 90%;
 }
 
-/* تنسيق اللوجو ليكون في المنتصف */
 .logo {
   max-height: 50px;
   display: block;
   margin: auto;
 }
 
-/* تنسيق روابط النافبار بإطار أخضر */
+/* روابط النافبار بإطار أخضر */
 .nav-links {
   display: flex;
   gap: 10px;
@@ -66,25 +67,32 @@ body {
   padding: 5px 10px;
 }
 
-/* ضبط الجدول ليكون متجاوبًا */
+/* تنسيق الجدول */
 .table-container {
   overflow-x: auto;
-  padding: 120px 10px 10px; /* إضافة مساحة تحت النافبار */
+  padding: 140px 10px 10px;
 }
 
 .table {
-  border: 2px solid white;
   width: 100%;
+  border: 2px solid green;
+  color: white;
 }
 
-.table th, .table td {
-  border: 1px solid white;
+.table th {
+  background-color: green;
+  color: white;
   text-align: center;
-  font-family: 'Amiri', serif; /* الخط الكوفي */
-  padding: 5px; /* تقليل التباعد بين الأسطر */
+  padding: 10px;
 }
 
-/* جعل الفوتر أصغر مع تقليل التباعد */
+.table td {
+  border: 1px solid green;
+  text-align: center;
+  padding: 8px;
+}
+
+/* الفوتر */
 footer {
   position: fixed;
   bottom: 0;
@@ -96,10 +104,9 @@ footer {
   font-size: 14px;
 }
 
-/* تغيير لون الخط في الفوتر */
 footer p {
   color: red;
-  margin: 3px 0; /* تقليل التباعد بين الأسطر */
+  margin: 3px 0;
 }
 
 footer .credit {
