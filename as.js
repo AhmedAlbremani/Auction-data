@@ -4322,56 +4322,46 @@ const data = [  {
         "TURKON  AQABA": 2900
       }/* ... البيانات الأصلية هنا ... */];
 
-     const data = [
-  // مثال لبيانات الاختبار
-  {
-    "المزاد": "مزاد 1",
-    "المدينة": "الرياض",
-    "مايرسك - العقبة": "1500",
-    "مايرسك - جبل علي": "2000",
-    "مايرسك - أم قصر": "1800",
-    "إم إس سي - أم قصر": "2200",
-    "وان - جبل علي": "2100",
-    "موقع النقل": "الميناء الرئيسي",
-    "تركون - العقبة": "1900"
-  }
-];
-
-function loadData() {
-  const tbody = document.getElementById('tableBody');
-  tbody.innerHTML = '';
-  
-  data.forEach(item => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${item.المزاد}</td>
-      <td>${item.المدينة}</td>
-      <td>${item["مايرسك - العقبة"]}</td>
-      <td>${item["مايرسك - جبل علي"]}</td>
-      <td>${item["مايرسك - أم قصر"]}</td>
-      <td>${item["إم إس سي - أم قصر"]}</td>
-      <td>${item["وان - جبل علي"]}</td>
-      <td>${item["موقع النقل"]}</td>
-      <td>${item["تركون - العقبة"]}</td>
-    `;
-    tbody.appendChild(row);
-  });
-}
-
-function filterResults() {
-  const auctionText = document.getElementById('searchAuction').value.toUpperCase();
-  const cityText = document.getElementById('searchCity').value.toUpperCase();
-  const rows = document.querySelectorAll("#tableBody tr");
-  
-  rows.forEach(row => {
-    const auction = row.cells[0].textContent.toUpperCase();
-    const city = row.cells[1].textContent.toUpperCase();
-    row.style.display = (auction.includes(auctionText) && city.includes(cityText) ? "" : "none";
-  });
-}
-
-window.addEventListener('load', () => {
-  loadData();
-  document.getElementById('searchAuction').addEventListener('input', filterResults);
-  document.getElementById('searchCity').addEventListener('input', filterResults);
-});
+      function loadData() {
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+        
+        data.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.AUCTION}</td>
+            <td>${item.CITY}</td>
+            <td>${Number(item["MAERSK  AQABA"]) + 400}</td>
+            <td>${Number(item["MAERSK  JEBEL ALI"]) + 400}</td>
+            <td>${Number(item["MAERSK  UMM QASR"]) + 400}</td>
+            <td>${Number(item["MSC  UMM QASR"]) + 400}</td>
+            <td>${Number(item["ONE  JEBEL ALI"]) + 400}</td>
+            <td>${item.TERMINAL}</td>
+            <td>${Number(item["TURKON  AQABA"]) + 400}</td>
+          `;
+          tbody.appendChild(row);
+        });
+        
+        document.getElementById('resultsTable').style.display = 'table';
+      }
+      
+      function filterResults() {
+        const auctionText = document.getElementById('searchAuction').value.toUpperCase();
+        const cityText = document.getElementById('searchCity').value.toUpperCase();
+        const rows = document.querySelectorAll("#tableBody tr");
+        
+        rows.forEach(row => {
+          const auction = row.cells[0].textContent.toUpperCase();
+          const city = row.cells[1].textContent.toUpperCase();
+          row.style.display = (auction.includes(auctionText) && city.includes(cityText)) ? "" : "none";
+        });
+      }
+      
+      // إضافة event listeners بعد تحميل الصفحة
+      window.addEventListener('load', () => {
+        loadData();
+        filterResults();
+        
+        document.getElementById('searchAuction').addEventListener('input', filterResults);
+        document.getElementById('searchCity').addEventListener('input', filterResults);
+      });
