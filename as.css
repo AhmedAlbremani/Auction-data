@@ -16,7 +16,7 @@ body {
   padding: 20px 0;
 }
 
-/* النافبار (يختفي عند التمرير للأسفل) */
+/* النافبار */
 .nav {
   position: fixed;
   top: 0;
@@ -28,8 +28,9 @@ body {
   transition: top 0.3s;
 }
 
+/* إخفاء النافبار عند التمرير للأسفل */
 .hidden-navbar {
-  top: -70px; /* يخفي النافبار عند التمرير */
+  top: -70px;
 }
 
 /* روابط النافبار */
@@ -48,7 +49,7 @@ body {
   padding: 5px 10px;
 }
 
-/* البحث بدون تسميات فقط placeholder */
+/* البحث بدون تسميات، فقط placeholder */
 .search-container {
   display: flex;
   flex-direction: column;
@@ -99,6 +100,9 @@ footer {
   padding: 10px;
   font-size: 14px;
   margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p {
