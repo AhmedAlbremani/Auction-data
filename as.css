@@ -1,19 +1,27 @@
 /* جعل خلفية الصفحة سوداء */
+/* جعل خلفية الصفحة سوداء */
 body {
   background-color: black;
   color: white;
   font-family: 'Amiri', serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 /* العنوان قبل النافبار */
 .page-header {
   text-align: center;
   padding: 20px 0;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.page-header h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 /* النافبار */
@@ -25,12 +33,18 @@ body {
   border-bottom: 3px solid green;
   padding: 10px 0;
   z-index: 1000;
-  transition: top 0.3s;
 }
 
-/* إخفاء النافبار عند التمرير للأسفل */
-.hidden-navbar {
-  top: -70px;
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-height: 50px;
+  display: block;
+  margin: auto;
 }
 
 /* روابط النافبار */
@@ -49,13 +63,19 @@ body {
   padding: 5px 10px;
 }
 
-/* البحث بدون تسميات، فقط placeholder */
+/* حقل البحث مع التسميات */
 .search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 80px;
   gap: 10px;
+}
+
+.search-container label {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }
 
 .search-container input {
@@ -69,7 +89,6 @@ body {
 
 /* تنسيق الجدول */
 .table-container {
-  flex: 1; /* يدفع الفوتر للأسفل */
   overflow-x: auto;
   padding: 20px;
 }
@@ -92,17 +111,16 @@ body {
   padding: 8px;
 }
 
-/* الفوتر ثابت أسفل الصفحة */
+/* الفوتر */
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: #222;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
-  margin-top: auto;
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
 
 footer p {
