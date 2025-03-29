@@ -4356,7 +4356,18 @@ const data = [  {
           row.style.display = (auction.includes(auctionText) && city.includes(cityText)) ? "" : "none";
         });
       }
-      
+      let lastScrollTop = 0;
+const navbar = document.querySelector(".nav");
+
+window.addEventListener("scroll", function () {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  if (currentScroll > lastScrollTop) {
+    navbar.classList.add("hidden-navbar"); // إخفاء النافبار عند التمرير لأسفل
+  } else {
+    navbar.classList.remove("hidden-navbar"); // إظهاره عند التمرير لأعلى
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
       // إضافة event listeners بعد تحميل الصفحة
       window.addEventListener('load', () => {
         loadData();
