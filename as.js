@@ -4356,7 +4356,7 @@ const data = [  {
           row.style.display = (auction.includes(auctionText) && city.includes(cityText)) ? "" : "none";
         });
       }
-      let lastScrollTop = 0;
+         let lastScrollTop = 0;
 const navbar = document.querySelector(".nav");
 
 window.addEventListener("scroll", function () {
