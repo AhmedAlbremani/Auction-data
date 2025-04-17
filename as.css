@@ -9,11 +9,12 @@ body {
 }
 
 
-/* إخفاء العمود الثالث (مايرسك - العقبة) والعمود التاسع (تركون - العقبة) */
-    th:nth-child(3), td:nth-child(3),
-    th:nth-child(9), td:nth-child(9) {
-      display: none;
-    }
+  /* إخفاء الأعمدة: 3 (مايرسك-العقبة)، 7 (وان-جبل علي)، 9 (تركون-العقبة) */
+  th:nth-child(3), td:nth-child(3),
+  th:nth-child(7), td:nth-child(7),
+  th:nth-child(9), td:nth-child(9) {
+    display: none;
+  }
 
 /* العنوان قبل النافبار */
 .page-header {
