@@ -8,6 +8,12 @@ body {
   padding: 0;
 }
 
+/* إخفاء العمود الثالث (مايرسك - العقبة) والعمود التاسع (تركون - العقبة) */
+    th:nth-child(3), td:nth-child(3),
+    th:nth-child(9), td:nth-child(9) {
+      display: none;
+    }
+
 /* العنوان قبل النافبار */
 .page-header {
   text-align: center;
